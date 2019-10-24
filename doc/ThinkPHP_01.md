@@ -135,6 +135,7 @@ http://serverName/index.php（或者其它应用入口文件）/模块/控制器
 因此，http://demo1023.zhangqx.com/  与  http://demo1023.zhangqx.com/index.php/index/index/index/  是等价的
 
 
+在Index控制器中增加一个login方法，代码如下：
 
 ```
 <?php
@@ -153,8 +154,10 @@ class Index
     }
 }
 ```
-
+通过URL  http://demo1023.zhangqx.com/index.php/index/index/login/ 访问结果如下
 ![](/images/thinkphp/08@2x.png)
+
+
 ## 二、设计登录静态页面
 
 
