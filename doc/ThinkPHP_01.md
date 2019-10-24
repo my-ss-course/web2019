@@ -13,12 +13,18 @@
 
 为了方便，使用宝塔工具创建ThinkPHP站点，并将域名demo1023.zhangqx.com解析到该服务器IP
 
+---
+
+
 ![](/images/thinkphp/01@2x.png)
 
+---
 
 创建成功后的目录结构如下图所示
 
 ![](/images/thinkphp/02@2x.png)
+
+---
 
 ThinkPHP官网的帮助文档中的目录结构如下：
 
@@ -76,6 +82,8 @@ project 应用部署目录
 
 - linux环境下，确保runtime目录有可写权限
 - 5.0的部署建议是public目录作为web目录访问内容
+
+---
 
 **将域名解析到服务器主机IP**
 
