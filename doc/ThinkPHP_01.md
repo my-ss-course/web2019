@@ -1,11 +1,12 @@
 开发环境：
-1、PHP 5.4
-2、MySQL 5.5
-3、ThinkPHP 5.0
-4、CentOS Linux 7.2
-5、Nginx 1.10.10
-6、宝塔Linux主机管理软件 7.0.1
-7、phpMyAdmin4.4
+
+- 1、PHP 5.4
+- 2、MySQL 5.5
+- 3、ThinkPHP 5.0
+- 4、CentOS Linux 7.2
+- 5、Nginx 1.10.10
+- 6、宝塔Linux主机管理软件 7.0.1
+- 7、phpMyAdmin4.4
 
 
 ## 一、创建ThinkPHP站点
