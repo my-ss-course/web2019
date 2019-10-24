@@ -6,7 +6,7 @@
 - CentOS Linux 7.2
 - Nginx 1.10.10
 - 宝塔Linux主机管理软件 7.0.1
-- phpMyAdmin4.4
+- phpMyAdmin 4.4
 
 
 ## 一、创建ThinkPHP站点
@@ -79,10 +79,12 @@ project 应用部署目录
 
 ![](/images/thinkphp/03@2x.png)
 
-确保域名被正确的解析到主机IP,可在本地机器通过ping命令来测试
+**确保域名被正确的解析到主机IP,可在本地机器通过ping命令来测试**
+
 ![](/images/thinkphp/04@2x.png)
 
-通过浏览器打开站点
+**通过浏览器打开站点**
+
 ![](/images/thinkphp/05@2x.png)
 
 
