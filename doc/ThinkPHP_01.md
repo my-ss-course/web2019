@@ -89,8 +89,6 @@ project 应用部署目录
 
 ![](/images/thinkphp/05@2x.png)
 
-## 二、设计登录静态页面
-
 在application/index/controller目录下的index.php文件内容如下：
 
 
@@ -107,6 +105,27 @@ class Index
 }
 
 ```
+将该文件的内容修改如下：
+```
+<?php
+namespace app\index\controller;
+
+class Index
+{
+    public function index()
+    {
+        return 'Hello World';
+    }
+}
+
+```
+
+
+## 二、设计登录静态页面
+
+
+
+
 
 
 
