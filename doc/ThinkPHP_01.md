@@ -77,13 +77,16 @@ project 应用部署目录
 ├─LICENSE.txt 授权说明文件
 ├─README.md README 文件
 ├─think 命令行入口文件
+
 ```
 
 
 - linux环境下，确保runtime目录有可写权限
 - 5.0的部署建议是public目录作为web目录访问内容
 
+
 ---
+
 
 **将域名解析到服务器主机IP**
 
@@ -176,10 +179,24 @@ class Index
 默认的视图目录是模块的view目录，框架的默认视图文件后缀是.html。
 
 
+创建模块视图目录view，创建结果如下
 
+新建login.html文件，代码如下
+
+
+在login方法中，调用fetch方法。代码如下
+
+
+访问http://demo1023.zhangqx.com/index.php/index/index/login/ 显示结果如下：
 
 
 ## 三、创建数据库
+打开phpMyAdmin控制面板，创建用户表。SQL语句如下：
+
+
+添加一个用户信息
+
+
 
 ## 四、实现登录功能
 
