@@ -120,7 +120,41 @@ class Index
 
 ```
 
+ http://demo1023.zhangqx.com/  显示效果如下：
+![](/images/thinkphp/06@2x.png)
 
+ThinkPHP5.0在没有启用路由的情况下典型的URL访问规则是：
+
+
+```
+http://serverName/index.php（或者其它应用入口文件）/模块/控制器/操作/[参数名/参数值...]
+```
+
+![](/images/thinkphp/07@2x.png)
+
+因此，http://demo1023.zhangqx.com/  与  http://demo1023.zhangqx.com/index.php/index/index/index/  是等价的
+
+
+
+```
+<?php
+namespace app\index\controller;
+
+class Index
+{
+    public function index()
+    {
+        return 'Hello World';
+    }
+    
+    public function login()
+    {
+        return 'Login';
+    }
+}
+```
+
+![](/images/thinkphp/08@2x.png)
 ## 二、设计登录静态页面
 
 
