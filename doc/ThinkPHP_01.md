@@ -77,6 +77,8 @@ project 应用部署目录
 - linux环境下，确保runtime目录有可写权限
 - 5.0的部署建议是public目录作为web目录访问内容
 
+**将域名解析到服务器主机IP**
+
 ![](/images/thinkphp/03@2x.png)
 
 **确保域名被正确的解析到主机IP,可在本地机器通过ping命令来测试**
