@@ -539,6 +539,28 @@ input{
 
 ![](/images/thinkphp/17@2x.png)
 
+## 六、获取cookie值
 
+在前端可以获取到cookie中的值
+![](/images/thinkphp/19@2x.png)
 
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+__ROOT__<br>
+__STATIC__<br>
+__JS__<br>
+__CSS__<br>
+
+{$Think.cookie.user_name} ，欢迎你！
+</body>
+</html>
+```
+
+![](/images/thinkphp/18.png)
 
