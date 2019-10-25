@@ -267,9 +267,8 @@ class Index extends Controller
 访问http://demo1023.zhangqx.com/index.php/index/index/login/ 显示结果如下：
 ![](/images/thinkphp/10@2x.png)
 
-## 三、创建数据库
-打开phpMyAdmin控制面板，创建用户表。SQL语句如下：
-
+## 三、创建数据库及表
+在创建站点的时候，已经创建了数据库。打开phpMyAdmin控制面板，zai数据库中创建用户表。SQL语句如下：
 
 
 ```
@@ -288,14 +287,17 @@ PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 ```
 
+![](/images/thinkphp/11@2x.png)
 
-![](/images/thinkphp/09@2x.png)
-
+![](/images/thinkphp/12.png)
 同样的操作方式添加一个用户信息，用户名admin，密码admin（密码需要MD5加密）
 
 ```
 insert into users(`user_name`,`user_pwd`) value('admin','21232f297a57a5a743894a0e4a801fc3');
 ```
+![](/images/thinkphp/13.png)
+![](/images/thinkphp/14.png)
+![](/images/thinkphp/15.png)
 
 ## 四、实现登录功能
 
