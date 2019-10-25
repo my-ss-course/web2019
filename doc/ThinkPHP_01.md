@@ -229,8 +229,8 @@ login.html文件代码如下
 <body>  
         <h1>用户登录</h1>  
         <form method="post">  
-            <input type="text" required="required" placeholder="用户名" name="u"></input>  
-            <input type="password" required="required" placeholder="密码" name="p"></input>  
+            <input type="text" required="required" placeholder="用户名" name="user_name"></input>  
+            <input type="password" required="required" placeholder="密码" name="user_pwd"></input> 
             <button class="but" type="submit">登录</button>  
         </form>  
 </body>  
@@ -302,8 +302,6 @@ return [
 
 
 
-
-
 打开phpMyAdmin控制面板，在数据库中创建用户表。SQL语句如下：
 
 
@@ -336,6 +334,37 @@ insert into users(`user_name`,`user_pwd`) value('admin','21232f297a57a5a743894a0
 ![](/images/thinkphp/15.png)
 
 ## 四、实现登录功能
+
+将登录页面的表单提交地址设置为index/dologin（index模块下的dologin方法）
+
+
+```
+<form method="post" action="{:url('index/dologin')}"> 
+```
+
+
+完整代码如下：
+
+
+```
+<!DOCTYPE html>
+<head>  
+    <meta charset="UTF-8">  
+    <title>登录示例</title>  
+</head>  
+<body>  
+        <h1>用户登录</h1>  
+        <form method="post" action="{:url('index/dologin')}">  
+        
+            <input type="text" required="required" placeholder="用户名" name="user_name"></input>  
+            <input type="password" required="required" placeholder="密码" name="user_pwd"></input>  
+            <button class="but" type="submit">登录</button>  
+        </form>  
+</body>  
+</html>
+```
+
+在index模块下，新建dologin方法
 
 
 
