@@ -179,7 +179,42 @@ class Index
 默认的视图目录是模块的view目录，框架的默认视图文件后缀是.html。
 
 
-创建模块视图目录view，创建结果如下
+创建模块视图目录view，原目录结构如下
+
+```
+application/
+├── command.php
+├── common.php
+├── config.php
+├── database.php
+├── extra
+│   └── queue.php
+├── index
+│   └── controller
+│       └── Index.php
+├── route.php
+└── tags.php
+```
+
+在application目录下index目录（模块）下创建view目录（视图）
+
+```
+application/
+├── command.php
+├── common.php
+├── config.php
+├── database.php
+├── extra
+│   └── queue.php
+├── index
+│   ├── controller
+│   │   └── Index.php
+│   └── view
+├── route.php
+└── tags.php
+```
+
+
 
 新建login.html文件，代码如下
 
