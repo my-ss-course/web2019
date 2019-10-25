@@ -267,8 +267,44 @@ class Index extends Controller
 访问http://demo1023.zhangqx.com/index.php/index/index/login/ 显示结果如下：
 ![](/images/thinkphp/10@2x.png)
 
-## 三、创建数据库及表
-在创建站点的时候，已经创建了数据库。打开phpMyAdmin控制面板，zai数据库中创建用户表。SQL语句如下：
+## 三、配置数据库连接并创建表
+在创建站点时，已经创建了数据库。先在Thinkphp的配置文件中配置数据库连接地址
+修改application目录下的database.php文件
+
+
+```
+return [
+    // 数据库类型
+    'type'            => 'mysql',
+    // 服务器地址
+    'hostname'        => '127.0.0.1',
+    // 数据库名
+    'database'        => 'demo1023_zhangq',
+    // 用户名
+    'username'        => 'demo1023_zhangq',
+    // 密码
+    'password'        => '填写真实密码',
+    // 端口
+    'hostport'        => '',
+    // 连接dsn
+    'dsn'             => '',
+    // 数据库连接参数
+    'params'          => [],
+    // 数据库编码默认采用utf8
+    'charset'         => 'utf8',
+    // 数据库表前缀
+    'prefix'          => '',
+    // 数据库调试模式
+    'debug'           => true,
+    // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
+    'deploy'          => 0,
+```
+
+
+
+
+
+打开phpMyAdmin控制面板，在数据库中创建用户表。SQL语句如下：
 
 
 ```
