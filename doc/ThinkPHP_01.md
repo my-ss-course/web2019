@@ -194,18 +194,17 @@ class Index
 打开phpMyAdmin控制面板，创建用户表。SQL语句如下：
 
 
+![](/images/thinkphp/09@2x.png)
+
 添加一个用户信息
 
 
 
 ## 四、实现登录功能
 
+
+
 ## 五、显示用户列表
-
-
-
-
-
 
 
 
