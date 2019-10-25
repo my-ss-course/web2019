@@ -368,7 +368,39 @@ insert into users(`user_name`,`user_pwd`) value('admin','21232f297a57a5a743894a0
 
 
 
-## 五、显示用户列表
+```
+    public function doLogin()
+	{
+		$param = input('post.');
+		if(empty($param['user_name'])){
+			$this->error('用户名不能为空');
+		}
+		if(empty($param['user_pwd'])){
+			$this->error('密码不能为空');
+		}
+
+		//验证用户名
+		$has = db('users')->where('user_name',$param['user_name'])->find();
+		if(empty($has)){	
+			$this->error('用户名或密码错误');
+		}
+
+		// 验证密码
+		if($has['user_pwd'] != md5($param['user_pwd'])){
+			$this->error('用户名或密码错误');
+		}
+
+		// 记录用户登录信息
+		cookie('user_id',$has['id'],3600); // 一个小时有效期
+		cookie('user_name',$has['user_name'],3600);
+		$this->redirect(url('index/index'));
+		
+	}
+```
+
+
+
+## 五、引入css样式
 
 
 
