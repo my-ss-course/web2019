@@ -196,7 +196,7 @@ application/
 └── tags.php
 ```
 
-在application目录下index目录（模块）下创建view目录（视图）
+在application目录下index目录（模块）下创建view目录（视图）,再创建index目录（控制器名），并新建login.html文件（方法名）。结果如下：
 
 ```
 application/
@@ -210,30 +210,92 @@ application/
 │   ├── controller
 │   │   └── Index.php
 │   └── view
+│       └── index
+│           └── login.html
 ├── route.php
 └── tags.php
 ```
 
 
+login.html文件代码如下
 
-新建login.html文件，代码如下
+
+```
+<!DOCTYPE html>
+<head>  
+    <meta charset="UTF-8">  
+    <title>登录示例</title>  
+</head>  
+<body>  
+        <h1>用户登录</h1>  
+        <form method="post">  
+            <input type="text" required="required" placeholder="用户名" name="u"></input>  
+            <input type="password" required="required" placeholder="密码" name="p"></input>  
+            <button class="but" type="submit">登录</button>  
+        </form>  
+</body>  
+</html>
+```
+
 
 
 在login方法中，调用fetch方法。代码如下
 
 
-访问http://demo1023.zhangqx.com/index.php/index/index/login/ 显示结果如下：
+```
+<?php
+namespace app\index\controller;
+use think\View;
+use think\Controller;
+class Index extends Controller
+{
+    public function index()
+    {
+        return 'Hello World';
+    }
+    
+    public function login()
+    {
+        $view = new View();
+    	return $view->fetch();
+    }
+}
 
+```
+
+
+访问http://demo1023.zhangqx.com/index.php/index/index/login/ 显示结果如下：
+![](/images/thinkphp/10@2x.png)
 
 ## 三、创建数据库
 打开phpMyAdmin控制面板，创建用户表。SQL语句如下：
 
 
+
+```
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+
+`id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户id编号',
+
+`user_name` varchar(155) NOT NULL COMMENT '用户名',
+
+`user_pwd` varchar(50) NOT NULL COMMENT '用户密码（MD5处理后）',
+
+PRIMARY KEY (`id`)
+
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+```
+
+
 ![](/images/thinkphp/09@2x.png)
 
-添加一个用户信息
+同样的操作方式添加一个用户信息，用户名admin，密码admin（密码需要MD5加密）
 
-
+```
+insert into users(`user_name`,`user_pwd`) value('admin','21232f297a57a5a743894a0e4a801fc3');
+```
 
 ## 四、实现登录功能
 
