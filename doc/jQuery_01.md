@@ -231,6 +231,33 @@ exit(json_encode($arr));
 ![](/images/jQuery/04@2x.png)
 
 
+使用$.ajax(）方法代码如下：
+
+
+```
+$.ajax({
+			            type:'POST',  //提交方法是POST
+			            url:'/login.php', //请求的路径
+			            data:{"username":username,"password":password}, //以JSON字符串形式把 user 传到后台
+			            dataType:'JSON', //后台返回的数据类型是html文本
+			            timeout:1000,  //请求超时时间，毫秒
+			            error:function(){  //请求失败的回调方法
+			                $("#errormessage").text("数据请求异常");
+			            },
+			            success:function(result){   //请求成功的回调方法
+			            	if(result.success == 1){
+			            		window.location.href="index.html";
+			            	}else if(result.success == 0){
+			            		$("#errormessage").text("用户名或密码错误");
+			            	}else{
+			            		$("#errormessage").text("请求数据错误");
+			            	}
+			            }
+			        });
+```
+
+
+
 
 
 
