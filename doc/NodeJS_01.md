@@ -22,7 +22,7 @@ res.end("Hello World\n");
 server.listen(8000);
 console.log("httpd start @8000");
 ```
-## Express模块
+## Express框架
 
 # NodeJS+Express+Mysql实现用户登录
 
