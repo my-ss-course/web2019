@@ -120,10 +120,38 @@ login.html文件代码如下
     <input type="text" required="required" placeholder="用户名" name="user_name"></input>  
     <input type="password" required="required" placeholder="密码" name="user_pwd"></input> 
     <div id="errormessage"></div>
-    <button  type="button">登录</button>     
+    <button id="login_button" type="button">登录</button>     
 </body>  
 </html>
 ```
+
+添加ajax代码如下
+
+
+```
+
+$("#login_button").click(function(){
+    $.post("login.json",
+        {
+            "name":$("#username").val(),
+            "password":$("#password").val()
+        },
+        //回调函数
+        function(data){
+            var json=data[0];
+            if(json.success == 0){
+                $("#errormessage").text("用户名或密码错误");
+            }
+            else if(json.success== 1){
+                window.location.href="success.html";
+            }
+        }
+    )
+})
+
+```
+
+
 
 
 
