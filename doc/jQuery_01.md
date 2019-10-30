@@ -131,7 +131,7 @@ login.html文件代码如下
 ```
 
 $("#login_button").click(function(){
-    $.post("login.json",
+    $.post("login.php",
         {
             "name":$("#username").val(),
             "password":$("#password").val()
