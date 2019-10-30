@@ -105,3 +105,28 @@ $.ajax() 返回其创建的 XMLHttpRequest 对象。该方法是 jQuery 底层 A
 # jQuery验证用户名和密码实践
 
 
+
+login.html文件代码如下
+
+
+```
+<!DOCTYPE html>
+<head>  
+    <meta charset="UTF-8">  
+    <title>登录示例</title>  
+</head>  
+<body>  
+        <h1>用户登录</h1>  
+         
+            <input type="text" required="required" placeholder="用户名" name="user_name"></input>  
+            <input type="password" required="required" placeholder="密码" name="user_pwd"></input> 
+            <button  type="button">登录</button>  
+         
+</body>  
+</html>
+```
+
+
+
+
+
