@@ -9,7 +9,7 @@
 
 ## NodeJS运行环境安装
 可以在你自己的笔记本安装，也可以在Linux服务器上安装。
-
+安装方法参见【[安装NodeJS]()】
 
 ## 示例程序
 
@@ -24,6 +24,7 @@ console.log("httpd start @8000");
 ```
 ## Express框架
 Express 是一个保持最小规模的灵活的 Node.js Web 应用程序开发框架，为 Web 和移动应用程序提供一组强大的功能。
+
 
 假设已经安装了 Node.js，接下来为应用创建一个目录，然后进入此目录并将其作为当前工作目录
 
@@ -60,10 +61,15 @@ $ node app.js
 $ npm install express-generator -g
 
 如下命令创建了一个名称为 myapp 的 Express 应用。此应用将在当前目录下的 myapp 目录中创建，并且设置为使用 Pug 模板引擎（view engine）
+
 $ express --view=pug myapp
+
 $ cd myapp
+
 $ npm install
+
 $ DEBUG=myapp:* npm start
+
 
 ## Express路由
 
@@ -81,16 +87,23 @@ app.get('/', function (req, res) {
 此函数特征如下：
 
 express.static(root, [options])
+
 例如，通过如下代码就可以将 public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问了：
 
 app.use(express.static('public'))
+
 现在，你就可以访问 public 目录中的所有文件了：
 
 http://localhost:3000/images/kitten.jpg
+
 http://localhost:3000/css/style.css
+
 http://localhost:3000/js/app.js
+
 http://localhost:3000/images/bg.png
+
 http://localhost:3000/hello.html
+
 
 # NodeJS+Express+Mysql实现用户登录
 
