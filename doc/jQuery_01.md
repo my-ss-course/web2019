@@ -125,31 +125,84 @@ login.html文件代码如下
 </html>
 ```
 
-添加ajax代码如下
-
-
+ajax() 方法有几个重要参数：
 ```
-
-$("#login_button").click(function(){
-    $.post("login.php",
-        {
-            "name":$("#username").val(),
-            "password":$("#password").val()
+$.ajax({
+        url: "detail.html",  //发送请求的地址，String类型的参数
+        data:{id:"id"},      //发送到服务器的数据，Object或String类型的参数，如果已经不是字符串，将自动转换为字符串格式。
+        type: "POST",        //请求方式，默认为GET，String类型的参数
+        dataType:'json',     //预期服务器返回的数据类型，String类型的参数；可用类型有（xml，html，json，jsonp，text）
+        timeout:1000,        //请求超时时间，毫秒
+        async: true,         // 默认为true，所有请求均为异步请求，Boolean类型的参数
+        beforeSend：function(XMLHttpRequest){  //发送请求前调用的函数
+        
         },
-        //回调函数
-        function(data){
-            var json=data[0];
-            if(json.success == 0){
-                $("#errormessage").text("用户名或密码错误");
-            }
-            else if(json.success== 1){
-                window.location.href="success.html";
-            }
+        complete：function(XMLHttpRequest, textStatus){  //请求完成后调用的回调函数（请求成功或失败时均调用）
+        
+        },
+        
+        success:function(){  //请求成功后调用的回调函数
+        
+        },
+        error:function(){  //请求失败时被调用的函数
+        
         }
-    )
-})
+  });
+```
+
+
+添加ajax验证用户名密码的代码如下
 
 ```
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录示例</title>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+</head>
+<body>
+<h1>用户登录</h1>
+<input type="text" required="required" placeholder="用户名" name="user_name" id="username"></input>
+<input type="password" required="required" placeholder="密码" name="user_pwd" id="password"></input> 
+<div id="errormessage"></div>
+<button type="button" id="login_button">登录</button>
+
+
+		<script type="text/javascript">
+			$(function(){
+				$("#login_button").click(function(){
+					var username = $.trim($("#username").val());//取值
+					var password = $.trim($("#password").val());
+					if(!username){
+						alert("用户名必填!");
+						$("#username").focus();//获取焦点
+						return ;
+					}
+					if(!password){
+						alert("密码必填!");
+						$("#password").focus();//获取焦点
+						return ;
+					}
+					var param = {"username":username,"password":password}; 
+					$.post("login.php",param,function(result){
+						if(result){
+							window.location.href="success.php";	
+						}else{
+							alert("用户名或者密码错误!");
+						}
+					});
+				});
+			});
+		</script>
+		
+		
+</body>
+</html>
+
+```
+
+输入用户名密码后，点击提交无反应
+![](/images/jQuery/01@2x.png)
 
 
 
