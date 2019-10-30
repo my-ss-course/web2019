@@ -23,6 +23,28 @@ server.listen(8000);
 console.log("httpd start @8000");
 ```
 ## Express框架
+Express 是一个保持最小规模的灵活的 Node.js Web 应用程序开发框架，为 Web 和移动应用程序提供一组强大的功能。
+
+假设已经安装了 Node.js，接下来为应用创建一个目录，然后进入此目录并将其作为当前工作目录
+
+
+```
+$ mkdir myapp
+$ cd myapp
+$ npm init
+$ npm install express --save
+
+```
+
+运行
+
+
+```
+$ node app.js
+```
+
+
+
 
 # NodeJS+Express+Mysql实现用户登录
 
