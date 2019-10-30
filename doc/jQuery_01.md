@@ -1,3 +1,4 @@
+# jQuery基础
 
 ## jQuery是什么
 
@@ -13,39 +14,6 @@
 - HTML DOM - 针对 HTML 文档的标准模型，是关于如何获取、修改、添加或删除 HTML 元素的标准。
 - DOM树结构精确地描述了HTML文档中标签间的相互关联性。将HTML文档转化为DOM树的过程称为解析(parse)。
 - HTML文档被解析后，转化为DOM树，因此对HTML文档的处理可以通过对DOM树的操作实现。
-
-
-## jQuery
-
-示例1：
-
-```
-$( "button.continue" ).html( "Next Step..." )
-```
-
-
-示例2：
-```
-var hiddenBox = $( "#banner-message" );
-$( "#button-container button" ).on( "click", function( event ) {
-  hiddenBox.show();
-});
-```
-
-示例3：
-
-```
-$.ajax({
-  url: "/api/getWeather",
-  data: {
-    zipcode: 97201
-  },
-  success: function( result ) {
-    $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
-  }
-});
-```
-
 
 ## jQuery文件说明
 jQuery文件的文件名通常为jquery.min.js 或 jquery.js
@@ -66,7 +34,74 @@ jQuery文件的文件名通常为jquery.min.js 或 jquery.js
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 ```
 
+## jQuery 选择器
+- jQuery 选择器是如何准确地选取DOM树中的元素。
+- jQuery 元素选择器和属性选择器允许通过标签名、属性名或内容对 HTML 元素进行选择。
+- jQuery 元素选择器使用 CSS 选择器来选取 HTML 元素
+- jQuery 属性选择器使用 XPath 表达式来选择带有给定属性的元素
+- jQuery CSS 选择器可用于改变 HTML 元素的 CSS 属性
+
+```
+$("p") 选取 <p> 元素。
+$("p.intro") 选取所有 class="intro" 的 <p> 元素。
+$("p#demo") 选取所有 id="demo" 的 <p> 元素。
+$("[href]") 选取所有带有 href 属性的元素。
+$("[href='#']") 选取所有带有 href 值等于 "#" 的元素。
+$("[href!='#']") 选取所有带有 href 值不等于 "#" 的元素。
+$("[href$='.jpg']") 选取所有 href 值以 ".jpg" 结尾的元素。
+$("p").css("background-color","red") 把所有 p 元素的背景颜色更改为红色
+```
 
 
+
+## jQuery示例
+
+示例1：Get the <button> element with the class 'continue' and change its HTML to 'Next Step...'
+
+```
+$( "button.continue" ).html( "Next Step..." )
+```
+
+
+示例2：Show the #banner-message element that is hidden with display:none in its CSS when any button in #button-container is clicked.
+
+```
+var hiddenBox = $( "#banner-message" );
+$( "#button-container button" ).on( "click", function( event ) {
+hiddenBox.show();
+});
+```
+
+示例3：Call a local script on the server /api/getWeather with the query parameter zipcode=97201 and replace the element #weather-temp's html with the returned text.
+
+```
+$.ajax({
+url: "/api/getWeather",
+data: {
+zipcode: 97201
+},
+success: function( result ) {
+$( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+}
+});
+```
+## AJAX
+- AJAX = 异步 JavaScript 和 XML。
+- AJAX 是一种用于创建快速动态网页的技术。
+- 通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+- 传统的网页（不使用 AJAX）如果需要更新内容，必需重载整个网页面。
+- XMLHttpRequest 是 AJAX 的基础，所有现代浏览器（IE7+、Firefox、Chrome、Safari 以及 Opera）均内建 XMLHttpRequest 对象。
+- XMLHttpRequest 用于与服务器交换数据。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。
+- 通过 jQuery AJAX 方法，能够使用 HTTP Get 和 HTTP Post 从远程服务器上请求文本、HTML、XML 或 JSON - 同时能够把这些外部数据直接载入网页的被选元素中。
+
+## jQuery中的AJAX方法
+
+load() 方法从服务器加载数据，并把返回的数据放入被选元素中。
+$.get() 方法通过 HTTP GET 请求从服务器上请求数据。
+$.post() 方法通过 HTTP POST 请求从服务器上请求数据。
+$.ajax() 返回其创建的 XMLHttpRequest 对象。该方法是 jQuery 底层 AJAX 实现。
+
+
+# jQuery验证用户名和密码实践
 
 
