@@ -9,6 +9,10 @@
 - phpMyAdmin 4.4
 
 
+[TOC]
+
+
+
 ## 一、创建ThinkPHP站点
 
 为了方便，使用宝塔工具创建ThinkPHP站点，并将域名demo1023.zhangqx.com解析到该服务器IP
