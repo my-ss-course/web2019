@@ -7,7 +7,7 @@
 - Node使用Module模块去划分不同的功能，以简化应用的开发。Modules模块有点像C++语言中的类库。每一个Node的类库都包含了十分丰富的各类函数，比如http模块就包含了和http功能相关的很多函数，可以帮助开发者很容易地对比如http,tcp/udp等进行操作，还可以很容易的创建http和tcp/udp的服务器。
 - 发布于2009年5月，由Ryan Dahl开发，实质是对Chrome V8引擎进行了封装。
 
-## NodeJS安装
+## NodeJS运行环境安装
 
 ## 示例程序
 
