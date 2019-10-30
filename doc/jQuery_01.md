@@ -112,13 +112,14 @@ login.html文件代码如下
 ```
 <!DOCTYPE html>
 <head>  
-    <meta charset="UTF-8">  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
     <title>登录示例</title>  
 </head>  
 <body>  
     <h1>用户登录</h1>     
     <input type="text" required="required" placeholder="用户名" name="user_name"></input>  
     <input type="password" required="required" placeholder="密码" name="user_pwd"></input> 
+    <div id="errormessage"></div>
     <button  type="button">登录</button>     
 </body>  
 </html>
