@@ -10,7 +10,7 @@
 ## NodeJS运行环境安装
 可以在你自己的笔记本安装，也可以在Linux服务器上安装。
 
-安装方法参见【[安装NodeJS]()】
+安装方法参见 http://nodejs.cn/download/
 
 ## 示例程序
 
