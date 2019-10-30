@@ -184,12 +184,14 @@ $.ajax({
 						return ;
 					}
 					var param = {"username":username,"password":password}; 
-					$.post("login.php",param,function(result){
-						if(result){
-							window.location.href="success.php";	
-						}else{
-							alert("用户名或者密码错误!");
-						}
+					$.post("login.php",param,function(data){
+						var json=data;
+        				if(json.success == 0){
+                			$("#errormessage").text("用户名或密码错误");
+            			}
+            			else if(json.success== 1){
+                			window.location.href="index.html";
+        				}
 					});
 				});
 			});
@@ -204,7 +206,29 @@ $.ajax({
 输入用户名密码后，点击提交无反应
 ![](/images/jQuery/01@2x.png)
 
+login.php代码如下
 
+
+```
+<?php
+header('Content-Type:application/json; charset=utf-8');
+
+$arr = array('success'=>0);
+
+exit(json_encode($arr));
+
+?>
+```
+
+为了模拟后台到数据库的验证的结果。这里略过验证过程，直接通过返回JSON值来表示验证结果。通过修改success的值来模拟该接口的返回值。 1代表后台用户名密码验证成功，0代表后台用户名密码验证失败
+
+![](/images/jQuery/02@2x.png)
+此时可以输入用户名和密码进行登录测试。
+
+
+![](/images/jQuery/03@2x.png)
+
+![](/images/jQuery/04@2x.png)
 
 
 
