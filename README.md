@@ -8,9 +8,11 @@
 
 * ThinkPHP 5 + MySQL实现用户登录 【[参考文档](/doc/ThinkPHP_01.md)】
 
-* ThinkPHP 5 + X-admin的后台管理
+* ThinkPHP 5 + X-admin的后台管理 【[参考文档](/doc/ThinkPHP_02.md)】
 
-* NodeJS + MySQL实现用户登录
+* jQuery 实现用户登录功能前端验证 【[参考文档](/doc/jQuery_01.md)】
+
+* NodeJS + MySQL实现用户登录 【[参考文档](/doc/NodeJS_01.md)】
 
 * NodeJS + React实现用户登录
 
