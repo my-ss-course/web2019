@@ -36,6 +36,17 @@ $ npm install express --save
 
 ```
 
+
+```
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
+```
+
+
 运行
 
 
@@ -43,8 +54,43 @@ $ npm install express --save
 $ node app.js
 ```
 
+## Express 应用程序生成器
+参考地址：http://www.expressjs.com.cn/starter/generator.html
+
+$ npm install express-generator -g
+
+如下命令创建了一个名称为 myapp 的 Express 应用。此应用将在当前目录下的 myapp 目录中创建，并且设置为使用 Pug 模板引擎（view engine）
+$ express --view=pug myapp
+$ cd myapp
+$ npm install
+$ DEBUG=myapp:* npm start
+
+## Express路由
 
 
+
+```
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+```
+
+## 静态文件
+为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，请使用 Express 中的 express.static 内置中间件函数。
+
+此函数特征如下：
+
+express.static(root, [options])
+例如，通过如下代码就可以将 public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问了：
+
+app.use(express.static('public'))
+现在，你就可以访问 public 目录中的所有文件了：
+
+http://localhost:3000/images/kitten.jpg
+http://localhost:3000/css/style.css
+http://localhost:3000/js/app.js
+http://localhost:3000/images/bg.png
+http://localhost:3000/hello.html
 
 # NodeJS+Express+Mysql实现用户登录
 
