@@ -256,8 +256,13 @@ $ npm install utility
 $ npm install body-parser
 
 ```
+运行程序
 
-
+![](/images/NodeJS/16.png)
+![](/images/NodeJS/17.png)
+![](/images/NodeJS/18.png)
+![](/images/NodeJS/19.png)
+![](/images/NodeJS/20.png)
 
 
 
