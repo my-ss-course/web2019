@@ -76,32 +76,29 @@ $ node index.js
 
 安装express-generator 
 
-
 ```
 $  npm install express-generator --save -g
 ```
 
-
 创建了一个名称为myapp2的Express应用。并且设置Pug模板引擎
 
 
-
+```
 $ express --view=pug myapp2
 
-![](/images/NodeJS/13@2x.png)
 $ cd myapp2
 
 $ npm install
 
 $ DEBUG=myapp2:* npm start
+```
 
+![](/images/NodeJS/13@2x.png)
 
 ![](/images/NodeJS/14.png)
 
 
 ## Express路由
-
-
 
 ```
 app.get('/', function (req, res) {
@@ -111,10 +108,6 @@ app.get('/', function (req, res) {
 
 ## 静态文件
 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，请使用 Express 中的 express.static 内置中间件函数。
-
-此函数特征如下：
-
-express.static(root, [options])
 
 例如，通过如下代码就可以将 public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问了：
 
