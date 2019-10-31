@@ -14,6 +14,8 @@
 
 ## 示例程序
 
+文件名app.js
+
 ```
 var http = require('http');
 server = http.createServer(function (req, res) {
@@ -23,8 +25,16 @@ res.end("Hello World\n");
 server.listen(8000);
 console.log("httpd start @8000");
 ```
+
+通过以下命令可以运行该node程序
+
+![](/images/NodeJS/09@2x.png)
+
+通过浏览器可访问该web应用（需要在服务器的安全策略中开放8000端口）
+![](/images/NodeJS/08@2x.png)
+
 ## Express框架
-Express 是一个保持最小规模的灵活的 Node.js Web 应用程序开发框架，为 Web 和移动应用程序提供一组强大的功能。
+Express 是一个保持最小规模的灵活的 Node.js Web应用程序开发框架，为Web应用程序提供一组强大的功能。
 
 
 假设已经安装了 Node.js，接下来为应用创建一个目录，然后进入此目录并将其作为当前工作目录
@@ -34,42 +44,59 @@ Express 是一个保持最小规模的灵活的 Node.js Web 应用程序开发�
 $ mkdir myapp
 $ cd myapp
 $ npm init
-$ npm install express --save
+$ npm install express -g --save
 
 ```
+过程截图如下:
+![](/images/NodeJS/10@2x.png)
+![](/images/NodeJS/11@2x.png)
 
-
+新建index.js文件，程序代码如下
 ```
 const express = require('express')
 const app = express()
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Hello World express!'))
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 ```
 
 
-运行
-
+运行程序
 
 ```
-$ node app.js
+$ node index.js
 ```
+通过浏览器访问web应用，需放行相应的端口。
+![](/images/NodeJS/12.png)
 
 ## Express 应用程序生成器
 参考地址：http://www.expressjs.com.cn/starter/generator.html
 
-$ npm install express-generator -g
 
-如下命令创建了一个名称为 myapp 的 Express 应用。此应用将在当前目录下的 myapp 目录中创建，并且设置为使用 Pug 模板引擎（view engine）
+安装express-generator 
 
-$ express --view=pug myapp
 
-$ cd myapp
+```
+$  npm install express-generator --save -g
+```
+
+
+创建了一个名称为myapp2的Express应用。并且设置Pug模板引擎
+
+
+
+$ express --view=pug myapp2
+
+![](/images/NodeJS/13@2x.png)
+$ cd myapp2
 
 $ npm install
 
-$ DEBUG=myapp:* npm start
+$ DEBUG=myapp2:* npm start
+
+
+![](/images/NodeJS/14.png)
 
 
 ## Express路由
