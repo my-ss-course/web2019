@@ -178,7 +178,21 @@ var  server=app.listen(3000,function () {
 })
 ```
 
+安装express模块
 
+
+```
+$ npm install express
+```
+
+启动程序
+
+
+```
+$ node app.js
+```
+
+![](/images/NodeJS/15@2x.png)
 
 ## 编写验证登录功能代码
 完整代码如下：
@@ -233,6 +247,16 @@ var  server=app.listen(3000,function () {
     console.log("start");
 })
 ```
+安装程序所需的组件
+
+
+```
+$ npm install mysql
+$ npm install utility
+$ npm install body-parser
+
+```
+
 
 
 
