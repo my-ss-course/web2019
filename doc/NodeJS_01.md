@@ -128,7 +128,114 @@ http://localhost:3000/hello.html
 
 # NodeJS+Express+Mysql实现用户登录
 
-## 初始化工程
+## 创建项目
+
+
+```
+$ mkdir loginDemo
+$ cd loginDemo
+$ npm init
+```
+
+
+## 编写登录页面代码
+文件名  index.html
+
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form  action="/login" method="post">
+                <input type="text" name="name"/>
+                <input type="text" name="pwd"/>
+            <input type="submit" value="登录"/>
+        </form>
+
+</body>
+</html>
+```
+注意：此时运行程序是无法访问到index.html页面的
+
+## 使用express框架
+
+创建app.js文件，代码如下
+```
+var  express=require('express');
+var  app=express();
+
+app.get('/',function (req,res) {
+    res.sendfile(__dirname + "/" + "index.html" );
+})
+
+
+var  server=app.listen(3000,function () {
+    console.log("start");
+})
+```
+
+
+
+## 编写验证登录功能代码
+完整代码如下：
+
+
+```
+var  express=require('express');
+var  app=express();
+var  mysql=require('mysql');
+var utility=require("utility");
+var bodyParser = require('body-parser');
+
+/**
+ * 配置MySql
+ */
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'demo1023_zhangq',
+    password : '68EytEGc4h',
+    database : 'demo1023_zhangq',
+    port:'3306'
+});
+connection.connect();
+app.get('/',function (req,res) {
+    res.sendfile(__dirname + "/" + "index.html" );
+})
+
+/**
+ * 实现登录验证功能
+ */
+app.use(bodyParser.urlencoded({extended:false}));
+app.post('/login',function (req,res) {
+    var name = req.body.name;
+    var pwd = req.body.pwd;
+    var selectSQL = "select * from users where user_name = '"+name+"' and user_pwd = '"+ utility.md5(pwd)+"'";
+    console.log(selectSQL);
+    connection.query(selectSQL,function (err,rs) {
+        if (err) throw  err;
+        console.log(rs);
+        res.type('text/plain');
+        if(rs.length > 0 ){
+                res.send('登陆成功！');
+        }else
+        {
+                res.send('用户名或密码错误！');
+        }
+    })
+})
+
+
+var  server=app.listen(3000,function () {
+    console.log("start");
+})
+```
+
+
+
 
 
 
