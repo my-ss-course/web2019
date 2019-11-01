@@ -1,12 +1,11 @@
-
 [TOC]
 
 ## 一、实践内容
 **任务要求：根据给定的PSD格式文件的界面原图，制作Web页面**
-![](/images/Html/01_登录首页.jpg)
-![](../images/01_登录首页.jpg)
 
-![](../images/登录web效果图.png)
+![](/images/Html/01_登录首页.jpg)
+
+![](/images/Html/登录web效果图.png)
 **需要了解Photoshop的以下操作
 * 图层管理
 * 切图操作
@@ -35,9 +34,9 @@
 ```
 **3、设置页面背景**
 在Photoshop中，将界面的背景图截取出来。
-![](../images/登录背景01.png)
+![](/images/Html/登录背景01.png)
 保存为jpg格式图片，文件名为“bj.jpg”，如下图所示，
-![](../images/登录首页背景.jpg)
+![](/images/Html/登录首页背景.jpg)
 将该文件保存到images文件夹内
 *****
 |--- css
@@ -49,9 +48,8 @@
 在index.html的body中增加一个div，代码如下：
 ```
 <div id="container">
-    <div class="login">
-       
-    </div>
+<div class="login">
+</div>
 </div>
 ```
 在html文件的head引入css样式文件。如下所示
@@ -71,87 +69,84 @@ a:hover,a:active{text-decoration:none}
 /*-----------------------------登录页面-------------------------------------*/
 body{font:12px/1.5 Microsoft YaHei;position:relative;margin:0 auto;color:#000}
 #container{
-    width:960px;
-    box-shadow: 0 0 15px #999999;
-    margin: 0 auto;
-    overflow-x: hidden;
-    position: relative;
+width:960px;
+box-shadow: 0 0 15px #999999;
+margin: 0 auto;
+overflow-x: hidden;
+position: relative;
 }
 
-.login{background:#0c7fc2 url(../images/bg.jpg) no-repeat center top ;height:600px}
+.login{background:#0c7fc2 url(/images/Html/bg.jpg) no-repeat center top ;height:600px}
 ```
 效果图如下所示
-![](../images/登录背景01_01.png)
+![](/images/Html/登录背景01_01.png)
 **4、添加LOGO**
 
-![](../images/logo.png)
+![](/images/Html/logo.png)
 ```
 <div id="container">
-    <div class="login">
-        <div class="login_hd">
-        </div>
-        
-    </div>
+<div class="login">
+<div class="login_hd">
+</div>
+</div>
 </div>
 ```
 
 ```
-.login_hd{background:url(../images/logo.png) no-repeat;float:left;margin:20px 20px 0;width:423px;height:57px;}
+.login_hd{background:url(/images/Html/logo.png) no-repeat;float:left;margin:20px 20px 0;width:423px;height:57px;}
 ```
 
-![](../images/登录背景01_02.png)
+![](/images/Html/登录背景01_02.png)
 
 
 **5、添加登录框背景**
-![](../images/banner.gif)
-![](../images/login_bg.png)
+![](/images/Html/banner.gif)
+![](/images/Html/login_bg.png)
 ```
 <div id="container">
-    <div class="login">
-        <div class="login_hd">
-        </div>
-        <div class="clear">
-        </div>
-        <div class="login_banner">
-        </div>
-        <div class="login_main">
-           
-        </div>
-    </div>
+<div class="login">
+<div class="login_hd">
+</div>
+<div class="clear">
+</div>
+<div class="login_banner">
+</div>
+<div class="login_main">
+</div>
+</div>
 </div>
 ```
 ```
-.login_banner{background:url(../images/banner.gif) no-repeat;float:left;margin:210px 80px 0;width:310px;height:53px;}
-.login_main{position:relative; background:url(../images/login_bg.png) no-repeat;float:right;margin:110px 50px 50px;width:390px;height:240px;}
+.login_banner{background:url(/images/Html/banner.gif) no-repeat;float:left;margin:210px 80px 0;width:310px;height:53px;}
+.login_main{position:relative; background:url(/images/Html/login_bg.png) no-repeat;float:right;margin:110px 50px 50px;width:390px;height:240px;}
 ```
-![](../images/登录背景01_03.png)
+![](/images/Html/登录背景01_03.png)
 
 **6、添加表单**
-![](../images/login_btn.gif)
+![](/images/Html/login_btn.gif)
 ```
 <div id="container">
-    <div class="login">
-        <div class="login_hd">
-        </div>
-        <div class="clear">
-        </div>
-        <div class="login_banner">
-        </div>
-        <div class="login_main">
-            <div class="login_help">
-                <a href="#">使用帮助</a>
-            </div>
-            <form action="#" method="post" class="login_form">
-                <fieldset>
-                    <legend>登录表单</legend>
-                    <div class="username"><input name="" type="text" placeholder=" 学院邮箱" /></div>
-                    <div class="password"><input name="" type="password" placeholder=" 密码" /></div>
-                    <div class="login_btn"><input name="" type="button" value="登录" /></div>
-                </fieldset>
-            </form>
-           
-        </div>
-    </div>
+<div class="login">
+<div class="login_hd">
+</div>
+<div class="clear">
+</div>
+<div class="login_banner">
+</div>
+<div class="login_main">
+<div class="login_help">
+<a href="#">使用帮助</a>
+</div>
+<form action="#" method="post" class="login_form">
+<fieldset>
+<legend>登录表单</legend>
+<div class="username"><input name="" type="text" placeholder=" 学院邮箱" /></div>
+<div class="password"><input name="" type="password" placeholder=" 密码" /></div>
+<div class="login_btn"><input name="" type="button" value="登录" /></div>
+</fieldset>
+</form>
+</div>
+</div>
 </div>
 ```
 
@@ -165,38 +160,38 @@ body{font:12px/1.5 Microsoft YaHei;position:relative;margin:0 auto;color:#000}
 .username input{position:absolute; top:87px; left:150px; }
 .password input{position:absolute; top:134px; left:150px; }
 .login_btn{text-align:center;height:42px;margin:0;position:absolute; top:170px; left:150px; }
-.login_btn input{background:url(../images/login_btn.gif) no-repeat;border:0;width:68px;height:42px;cursor:pointer;text-indent:-9999px;*text-indent:0;*line-height:9999px;overflow:hidden}
+.login_btn input{background:url(/images/Html/login_btn.gif) no-repeat;border:0;width:68px;height:42px;cursor:pointer;text-indent:-9999px;*text-indent:0;*line-height:9999px;overflow:hidden}
 ```
 
-![](../images/登录背景01_04.png)
+![](/images/Html/登录背景01_04.png)
 **7、添加附件文字内容**
 
 ```
 <div id="container">
-    <div class="login">
-        <div class="login_hd">
-        </div>
-        <div class="clear">
-        </div>
-        <div class="login_banner">
-        </div>
-        <div class="login_main">
-            <div class="login_help">
-                <a href="#">使用帮助</a>
-            </div>
-            <form action="#" method="post" class="login_form">
-                <fieldset>
-                    <legend>登录表单</legend>
-                    <div class="username"><input name="" type="text" placeholder=" 学院邮箱" /></div>
-                    <div class="password"><input name="" type="password" placeholder=" 密码" /></div>
-                    <div class="login_btn"><input name="" type="button" value="登录" /></div>
-                </fieldset>
-            </form>
-            <div class="guest">用户名或密码错误！</div>
-            <div class="forget"><a href="#">密码找回?</a></div>
-            <div class="first">首次登陆，请使用“密码找回”功能，初始化您的密码！</div>
-        </div>
-    </div>
+<div class="login">
+<div class="login_hd">
+</div>
+<div class="clear">
+</div>
+<div class="login_banner">
+</div>
+<div class="login_main">
+<div class="login_help">
+<a href="#">使用帮助</a>
+</div>
+<form action="#" method="post" class="login_form">
+<fieldset>
+<legend>登录表单</legend>
+<div class="username"><input name="" type="text" placeholder=" 学院邮箱" /></div>
+<div class="password"><input name="" type="password" placeholder=" 密码" /></div>
+<div class="login_btn"><input name="" type="button" value="登录" /></div>
+</fieldset>
+</form>
+<div class="guest">用户名或密码错误！</div>
+<div class="forget"><a href="#">密码找回?</a></div>
+<div class="first">首次登陆，请使用“密码找回”功能，初始化您的密码！</div>
+</div>
+</div>
 </div>
 ```
 
@@ -208,43 +203,43 @@ body{font:12px/1.5 Microsoft YaHei;position:relative;margin:0 auto;color:#000}
 .first{float:right;margin:10px 0px 0;width:350px;height:50px;color:#fff;position:absolute; top:230px; left:40px;}
 
 ```
-![](../images/登录背景01_05.png)
+![](/images/Html/登录背景01_05.png)
 
 ## 三、本实践项目完整代码
 **index.html 文件**
 ```
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>教学课件管理系统--北京大学软件与微电子学院</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>教学课件管理系统--北京大学软件与微电子学院</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
 <div id="container">
-    <div class="login">
-        <div class="login_hd">
-        </div>
-        <div class="clear">
-        </div>
-        <div class="login_banner">
-        </div>
-        <div class="login_main">
-            <div class="login_help">
-                <a href="#">使用帮助</a>
-            </div>
-            <form action="#" method="post" class="login_form">
-                <fieldset>
-                    <legend>登录表单</legend>
-                    <div class="username"><input name="" type="text" placeholder=" 学院邮箱" /></div>
-                    <div class="password"><input name="" type="password" placeholder=" 密码" /></div>
-                    <div class="login_btn"><input name="" type="button" value="登录" /></div>
-                </fieldset>
-            </form>
-            <div class="guest">用户名或密码错误！</div>
-            <div class="forget"><a href="#">密码找回?</a></div>
-            <div class="first">首次登陆，请使用“密码找回”功能，初始化您的密码！</div>
-        </div>
-    </div>
+<div class="login">
+<div class="login_hd">
+</div>
+<div class="clear">
+</div>
+<div class="login_banner">
+</div>
+<div class="login_main">
+<div class="login_help">
+<a href="#">使用帮助</a>
+</div>
+<form action="#" method="post" class="login_form">
+<fieldset>
+<legend>登录表单</legend>
+<div class="username"><input name="" type="text" placeholder=" 学院邮箱" /></div>
+<div class="password"><input name="" type="password" placeholder=" 密码" /></div>
+<div class="login_btn"><input name="" type="button" value="登录" /></div>
+</fieldset>
+</form>
+<div class="guest">用户名或密码错误！</div>
+<div class="forget"><a href="#">密码找回?</a></div>
+<div class="first">首次登陆，请使用“密码找回”功能，初始化您的密码！</div>
+</div>
+</div>
 </div>
 </body>
 </html>
@@ -269,19 +264,19 @@ a:hover,a:active{text-decoration:none}
 
 body{font:12px/1.5 Microsoft YaHei;position:relative;margin:0 auto;color:#000}
 #container{
-    width:960px;
-    box-shadow: 0 0 15px #999999;
-    margin: 0 auto;
-    overflow-x: hidden;
-    position: relative;
+width:960px;
+box-shadow: 0 0 15px #999999;
+margin: 0 auto;
+overflow-x: hidden;
+position: relative;
 }
 
-.login{background:#0c7fc2 url(../images/bg.jpg) no-repeat center top ;height:600px}
+.login{background:#0c7fc2 url(/images/Html/bg.jpg) no-repeat center top ;height:600px}
 
-.login_hd{background:url(../images/logo.png) no-repeat;float:left;margin:20px 20px 0;width:423px;height:57px;}
+.login_hd{background:url(/images/Html/logo.png) no-repeat;float:left;margin:20px 20px 0;width:423px;height:57px;}
 
-.login_banner{background:url(../images/banner.gif) no-repeat;float:left;margin:210px 80px 0;width:310px;height:53px;}
-.login_main{position:relative; background:url(../images/login_bg.png) no-repeat;float:right;margin:110px 50px 50px;width:390px;height:240px;}
+.login_banner{background:url(/images/Html/banner.gif) no-repeat;float:left;margin:210px 80px 0;width:310px;height:53px;}
+.login_main{position:relative; background:url(/images/Html/login_bg.png) no-repeat;float:right;margin:110px 50px 50px;width:390px;height:240px;}
 
 
 .login_help{float:right;margin:6px -16px 10px;width:100px;height:30px;font-size:14px;color:#1e7bbd}
@@ -293,7 +288,7 @@ body{font:12px/1.5 Microsoft YaHei;position:relative;margin:0 auto;color:#000}
 .username input{position:absolute; top:87px; left:150px; }
 .password input{position:absolute; top:134px; left:150px; }
 .login_btn{text-align:center;height:42px;margin:0;position:absolute; top:170px; left:150px; }
-.login_btn input{background:url(../images/login_btn.gif) no-repeat;border:0;width:68px;height:42px;cursor:pointer;text-indent:-9999px;*text-indent:0;*line-height:9999px;overflow:hidden}
+.login_btn input{background:url(/images/Html/login_btn.gif) no-repeat;border:0;width:68px;height:42px;cursor:pointer;text-indent:-9999px;*text-indent:0;*line-height:9999px;overflow:hidden}
 
 
 .guest{float:left;margin:0px 20px 0;height:30px;font-size:14px;position:absolute; top:200px; left:0px; width:350px;text-align:center;color:#f00}
@@ -307,7 +302,6 @@ body{font:12px/1.5 Microsoft YaHei;position:relative;margin:0 auto;color:#000}
 
 ## 四、练手任务
 自行到网络上下载免费或收费的用户登录界面PSD格式文件。并制作成Web格式页面。
-![](../images/后台用户登录psd文件.png)
-
+![](/images/Html/后台用户登录psd文件.png)
 
 
