@@ -10,9 +10,11 @@
 ## NodeJS运行环境安装
 可以在你自己的笔记本安装，也可以在Linux服务器上安装。
 
-安装方法参见【[安装NodeJS]()】
+安装方法参见[Linux安装步骤](/doc/NodeJS_install.md)
 
 ## 示例程序
+
+文件名app.js
 
 ```
 var http = require('http');
@@ -23,8 +25,16 @@ res.end("Hello World\n");
 server.listen(8000);
 console.log("httpd start @8000");
 ```
+
+通过以下命令可以运行该node程序
+
+![](/images/NodeJS/09@2x.png)
+
+通过浏览器可访问该web应用（需要在服务器的安全策略中开放8000端口）
+![](/images/NodeJS/08@2x.png)
+
 ## Express框架
-Express 是一个保持最小规模的灵活的 Node.js Web 应用程序开发框架，为 Web 和移动应用程序提供一组强大的功能。
+Express 是一个保持最小规模的灵活的 Node.js Web应用程序开发框架，为Web应用程序提供一组强大的功能。
 
 
 假设已经安装了 Node.js，接下来为应用创建一个目录，然后进入此目录并将其作为当前工作目录
@@ -34,47 +44,61 @@ Express 是一个保持最小规模的灵活的 Node.js Web 应用程序开发�
 $ mkdir myapp
 $ cd myapp
 $ npm init
-$ npm install express --save
+$ npm install express -g --save
 
 ```
+过程截图如下:
+![](/images/NodeJS/10@2x.png)
+![](/images/NodeJS/11@2x.png)
 
-
+新建index.js文件，程序代码如下
 ```
 const express = require('express')
 const app = express()
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Hello World express!'))
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
 ```
 
 
-运行
-
+运行程序
 
 ```
-$ node app.js
+$ node index.js
 ```
+通过浏览器访问web应用，需放行相应的端口。
+![](/images/NodeJS/12.png)
 
 ## Express 应用程序生成器
 参考地址：http://www.expressjs.com.cn/starter/generator.html
 
-$ npm install express-generator -g
 
-如下命令创建了一个名称为 myapp 的 Express 应用。此应用将在当前目录下的 myapp 目录中创建，并且设置为使用 Pug 模板引擎（view engine）
+安装express-generator 
 
-$ express --view=pug myapp
+```
+$  npm install express-generator --save -g
+```
 
-$ cd myapp
+创建了一个名称为myapp2的Express应用。并且设置Pug模板引擎
+
+
+```
+$ express --view=pug myapp2
+
+$ cd myapp2
 
 $ npm install
 
-$ DEBUG=myapp:* npm start
+$ DEBUG=myapp2:* npm start
+```
+
+![](/images/NodeJS/13@2x.png)
+
+![](/images/NodeJS/14.png)
 
 
 ## Express路由
-
-
 
 ```
 app.get('/', function (req, res) {
@@ -84,10 +108,6 @@ app.get('/', function (req, res) {
 
 ## 静态文件
 为了提供诸如图像、CSS 文件和 JavaScript 文件之类的静态文件，请使用 Express 中的 express.static 内置中间件函数。
-
-此函数特征如下：
-
-express.static(root, [options])
 
 例如，通过如下代码就可以将 public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问了：
 
@@ -107,6 +127,144 @@ http://localhost:3000/hello.html
 
 
 # NodeJS+Express+Mysql实现用户登录
+
+## 创建项目
+
+
+```
+$ mkdir loginDemo
+$ cd loginDemo
+$ npm init
+```
+
+
+## 编写登录页面代码
+文件名  index.html
+
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form  action="/login" method="post">
+                <input type="text" name="name"/>
+                <input type="text" name="pwd"/>
+            <input type="submit" value="登录"/>
+        </form>
+
+</body>
+</html>
+```
+注意：此时运行程序是无法访问到index.html页面的
+
+## 使用express框架
+
+创建app.js文件，代码如下
+```
+var  express=require('express');
+var  app=express();
+
+app.get('/',function (req,res) {
+    res.sendfile(__dirname + "/" + "index.html" );
+})
+
+
+var  server=app.listen(3000,function () {
+    console.log("start");
+})
+```
+
+安装express模块
+
+
+```
+$ npm install express
+```
+
+启动程序
+
+
+```
+$ node app.js
+```
+
+![](/images/NodeJS/15@2x.png)
+
+## 编写验证登录功能代码
+完整代码如下：
+
+
+```
+var  express=require('express');
+var  app=express();
+var  mysql=require('mysql');
+var utility=require("utility");
+var bodyParser = require('body-parser');
+
+/**
+ * 配置MySql
+ */
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'demo1023_zhangq',
+    password : '68EytEGc4h',
+    database : 'demo1023_zhangq',
+    port:'3306'
+});
+connection.connect();
+app.get('/',function (req,res) {
+    res.sendfile(__dirname + "/" + "index.html" );
+})
+
+/**
+ * 实现登录验证功能
+ */
+app.use(bodyParser.urlencoded({extended:false}));
+app.post('/login',function (req,res) {
+    var name = req.body.name;
+    var pwd = req.body.pwd;
+    var selectSQL = "select * from users where user_name = '"+name+"' and user_pwd = '"+ utility.md5(pwd)+"'";
+    console.log(selectSQL);
+    connection.query(selectSQL,function (err,rs) {
+        if (err) throw  err;
+        console.log(rs);
+        res.type('text/plain');
+        if(rs.length > 0 ){
+                res.send('登陆成功！');
+        }else
+        {
+                res.send('用户名或密码错误！');
+        }
+    })
+})
+
+
+var  server=app.listen(3000,function () {
+    console.log("start");
+})
+```
+安装程序所需的组件
+
+
+```
+$ npm install mysql
+$ npm install utility
+$ npm install body-parser
+
+```
+运行程序
+
+![](/images/NodeJS/16.png)
+![](/images/NodeJS/17.png)
+![](/images/NodeJS/18.png)
+![](/images/NodeJS/19.png)
+![](/images/NodeJS/20.png)
+
+
 
 
 
