@@ -16,9 +16,13 @@
 **1、创建目录结构及相应的文件**
 *****
 |--- css
+
 |--- |--- style.css
+
 |--- images
+
 |--- index.html
+
 *****
 **2、编写index.html文件主体代码**
 ```
@@ -40,10 +44,15 @@
 将该文件保存到images文件夹内
 *****
 |--- css
+
 |--- |--- style.css
+
 |--- images
+
 |--- |--- bj.jpg
+
 |--- index.html
+
 *****
 在index.html的body中增加一个div，代码如下：
 ```
