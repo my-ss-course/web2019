@@ -1,6 +1,67 @@
-[TOC]
+# HTML是什么
+超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--  CSS引用 -->
+        <!--  必要的JS引用 -->
+        <title>文档标题</title>
+    </head>
+    <body>
+        <h1>一行文字</h1>
+        <p>一个段落</p>
+    </body>
+    <!--  JS引用 -->
+</html>
+```
 
-## 一、实践内容
+## HTML中的行内元素常用标签
+###  **a**
+* `<a>`标签定义超链接，用于从一张页面链接到另一张页面
+*  href 属性指示链接的目标
+*  示例：`<a href="路径">内容</a>`
+* 绝对路径：
+* 相对路径：
+### img
+### input 
+### select 
+### span 
+### br 
+### b 
+### strong
+### button
+
+### 特点
+* 和其他元素都在一行 
+* 宽度只与内容有关，设宽度无效 
+* 行内元素只能包含文本或其他行内元 素，不能包含块级元素
+
+
+## HTML中的块级元素常用标签
+### h 
+### p 
+### ul 
+### ol 
+### dl 
+### p 
+### div
+### table
+### form
+### hr
+### pre
+### blockquote
+
+### 特点
+* 总是从新的一行开始
+* 高度、宽度都是可控的 
+* 宽度没有设置时，默认为100%
+* 块级元素中可以包含块级元素和行内元素
+
+
+
+# 实践内容
 **任务要求：根据给定的PSD格式文件的界面原图，制作Web页面**
 
 ![](/images/Html/01_登录首页.jpg)
@@ -11,7 +72,7 @@
 * 切图操作
 * 测量尺寸
 
-## 二、实践过程
+## 实践过程
 [psd原图下载](http://webdev.zhangqx.com/doc/01_登录首页.psd)
 **1、创建目录结构及相应的文件**
 *****
@@ -214,7 +275,7 @@ position: relative;
 ```
 ![](/images/Html/登录背景01_05.png)
 
-## 三、本实践项目完整代码
+## 本实践项目完整代码
 **index.html 文件**
 ```
 <html>
@@ -309,7 +370,7 @@ position: relative;
 
 [项目示例代码下载](http://webdev.zhangqx.com/doc/web01.zip)
 
-## 四、练手任务
+## 课后练手任务
 自行到网络上下载免费或收费的用户登录界面PSD格式文件。并制作成Web格式页面。
 ![](/images/Html/后台用户登录psd文件.png)
 
